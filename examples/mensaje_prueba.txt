@@ -1,0 +1,8 @@
+La crisis financiera de 2008 reveló las vulnerabilidades del sistema bancario tradicional.
+En ese contexto, una persona (o grupo) bajo el seudónimo de Satoshi Nakamoto publicó el
+whitepaper de Bitcoin: un sistema de dinero electrónico que no requiere intermediarios de
+confianza. Así nació blockchain, una tecnología que combina criptografía con redes
+distribuidas para construir sistemas seguros, transparentes e inmutables.
+
+Este es un archivo de prueba para el encriptador AES-256 de la actividad 1.1.
+Si puedes leer este texto después de cifrar y descifrar, tu programa funciona correctamente.
