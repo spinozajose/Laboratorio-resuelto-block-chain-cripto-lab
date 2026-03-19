@@ -4,9 +4,9 @@ Este repositorio contiene la resolución de la **Actividad 1.1: Encriptador simp
 
 | Campo | Detalle |
 |-------|---------|
-| **Asignatura** | BCY0010 - Fundamentos de Blockchain |
+| **Asignatura** | BCY - Fundamentos de Blockchain 003D OLS |
 | **Experiencia** | EA1 - Herramientas criptográficas y sistemas distribuidos |
-| **Alumno** | LJ (spinozajose) |
+| **Alumno** | (Jose ignacio Espinoza Espinoza) LJ (spinozajose) |
 | **Escuela** | Informática y Telecomunicaciones - Duoc UC |
 
 ---
