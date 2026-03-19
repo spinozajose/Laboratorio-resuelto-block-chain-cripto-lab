@@ -13,8 +13,8 @@ Uso:
     python encriptador.py cifrar <archivo.txt>
     python encriptador.py descifrar <archivo.enc>
 
-Autor: <TU NOMBRE>
-Fecha: <FECHA>
+Autor: <Jose ignacio Espinoza>
+Fecha: <19-03-2026>
 """
 
 # ──────────────────────────────────────────────────────────────
@@ -56,17 +56,26 @@ def generar_llave():
     if os.path.exists(ARCHIVO_LLAVE):
         # TODO: Leer la llave desde el archivo ARCHIVO_LLAVE en modo binario ("rb")
         #       y retornarla. Imprime "Llave cargada desde 'secret.key'".
-        #
+        with open(ARCHIVO_LLAVE, "rb") as f:
+            key = f.read()
+            print("Llave cargada desde 'secret.key'")
+            return key
         # Pista: with open(ARCHIVO_LLAVE, "rb") as f: ...
         pass
     else:
         # TODO: Generar una llave nueva usando get_random_bytes(TAMANIO_LLAVE),
         #       guardarla en el archivo ARCHIVO_LLAVE en modo binario ("wb"),
         #       imprimir "Nueva llave generada y guardada" y retornarla.
-        #
+        key = get_random_bytes(TAMANIO_LLAVE)
         # Pista: key = get_random_bytes(TAMANIO_LLAVE)
+
+        with open(ARCHIVO_LLAVE, "wb") as f:
+            f.write(key)
+            print("Nueva llave generada y guardada")
+            return key
         pass
 
+#generar_llave()
 
 def cifrar_archivo(ruta_archivo, key):
     """
@@ -97,7 +106,8 @@ def cifrar_archivo(ruta_archivo, key):
     # Paso 1: Leer el archivo
     # TODO: Abrir ruta_archivo en modo lectura ("r") con encoding="utf-8"
     #       y leer todo su contenido en la variable `plaintext`.
-    plaintext = ""  # Reemplaza esto
+    with open(ruta_archivo, "r", encoding="utf-8") as f:
+        plaintext = f.read()
 
     # Paso 2: Validar tamaño
     if len(plaintext.encode("utf-8")) > TAMANIO_MAX_ARCHIVO:
@@ -109,17 +119,17 @@ def cifrar_archivo(ruta_archivo, key):
     # Paso 4: Crear el cifrador AES en modo CBC
     # TODO: Crear un objeto cipher usando AES.new(key, AES.MODE_CBC)
     #       El IV se genera automáticamente al no especificarlo.
-    cipher = None  # Reemplaza esto
+    cipher = AES.new(key, AES.MODE_CBC)
 
     # Paso 5: Aplicar padding
     # TODO: Usar pad(plaintext_bytes, TAMANIO_BLOQUE) para agregar relleno
     #       al texto plano. Guardar en la variable `padded_data`.
-    padded_data = None  # Reemplaza esto
+    padded_data = pad(plaintext_bytes, TAMANIO_BLOQUE)  # Reemplaza esto
 
     # Paso 6: Cifrar
     # TODO: Usar cipher.encrypt(padded_data) para cifrar.
     #       Guardar en la variable `cyphertext`.
-    cyphertext = None  # Reemplaza esto
+    cyphertext = cipher.encrypt(padded_data)  # Reemplaza esto
 
     # Paso 7: Obtener el IV y retornar
     if cipher is None or cyphertext is None:
@@ -156,16 +166,16 @@ def descifrar(iv, cyphertext, key):
         4. Convertir de bytes a string (UTF-8).
     """
     # TODO: Paso 1 — Crear descifrador usando AES.new(key, AES.MODE_CBC, iv=iv)
-    cipher = None  # Reemplaza esto
+    cipher = AES.new(key, AES.MODE_CBC, iv=iv)  # Reempl
 
     # TODO: Paso 2 — Descifrar usando cipher.decrypt(cyphertext)
-    padded_plaintext = None  # Reemplaza esto
+    padded_plaintext = cipher.decrypt(cyphertext) 
 
     # TODO: Paso 3 — Remover padding usando unpad(padded_plaintext, TAMANIO_BLOQUE)
-    plaintext_bytes = None  # Reemplaza esto
+    plaintext_bytes = unpad(padded_plaintext, TAMANIO_BLOQUE)  # Reemplaza esto
 
     # TODO: Paso 4 — Decodificar de bytes a string con .decode("utf-8")
-    plaintext = None  # Reemplaza esto
+    plaintext = plaintext_bytes.decode("utf-8") 
 
     if plaintext is None:
         print("  ❌ No se pudo descifrar. Completa los TODO en descifrar().")
