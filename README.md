@@ -85,3 +85,8 @@ python tests/test_encriptador.py && python tests/test_hash.py
 ```
 <img width="624" height="794" alt="image" src="https://github.com/user-attachments/assets/cd921edc-697d-41ad-9d78-8038de2b8b4a" />
 
+### 6. Comparaciones y observacion
+
+<img width="624" height="471" alt="image" src="https://github.com/user-attachments/assets/0b47c32a-8573-4a20-9f66-f88dc62ef1fa" />
+
+
