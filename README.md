@@ -22,9 +22,9 @@ Este repositorio contiene la resolución de la **Actividad 1.1: Encriptador simp
 ##  Descripción del Proyecto
 Se ha completado el código base (boilerplate) para construir un sistema de cifrado robusto. Los objetivos alcanzados incluyen:
 
-1.  **Cifrado Simétrico AES-256:** Generación de llaves seguras y manejo de archivos en modo CBC.
-2.  **Integridad de Datos:** Implementación de SHA-256 para verificar que los archivos no hayan sido alterados.
-3.  **Análisis Comparativo:** Evaluación de rendimiento y seguridad entre AES-256 y el estándar legado DES.
+1.  **Cifrado Simétrico AES:** Generación de llaves seguras y manejo de archivos en modo CBC.
+2.  **Integridad de Datos:** verificar que los archivos no hayan sido alterados.
+3.  **Análisis Comparativo:** Evaluación de rendimiento y seguridad entre AES y el estándar legado DES.
 
 ---
 
